@@ -21,23 +21,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Background Animation */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: linear-gradient(45deg, rgba(12, 103, 36, 0.7), rgba(38, 70, 83, 0.7));
-            clip-path: circle(30% at 80% 20%);
-            z-index: -1;
-            animation: animateBG 60s infinite alternate;
-        }
-        @keyframes animateBG {
-            0% { clip-path: circle(30% at 80% 20%); }
-            100% { clip-path: circle(40% at 10% 80%); }
-        }
 
         /* Header */
         header {
