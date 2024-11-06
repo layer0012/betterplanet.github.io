@@ -16,14 +16,32 @@
             font-family: 'Montserrat', sans-serif;
             color: #333;
             line-height: 1.6;
-            background: linear-gradient(to right, #f3f3f3, #e3f2fd);
+            background: #f4f4f9;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(42, 157, 143, 0.7), rgba(38, 70, 83, 0.7));
+            clip-path: circle(30% at 80% 20%);
+            z-index: -1;
+            animation: animateBG 10s infinite alternate;
+        }
+        @keyframes animateBG {
+            0% { clip-path: circle(30% at 80% 20%); }
+            100% { clip-path: circle(40% at 10% 80%); }
+        }
+
         /* Header */
         header {
-            background: linear-gradient(135deg, #2a9d8f, #264653);
+            background: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 60px 20px;
             text-align: center;
@@ -38,39 +56,37 @@
             animation: fadeIn 1.5s ease-out;
             position: relative;
             z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
         header p {
             font-size: 1.3rem;
             font-weight: 300;
             z-index: 1;
             position: relative;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
-            top: -20%;
-            left: -50%;
-            animation: pulse 5s infinite;
-            z-index: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+            opacity: 0.9;
         }
 
         /* Section Styles */
         section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 1000px;
             margin: 0 auto;
+            text-align: center;
         }
         section h2 {
             font-size: 2.5rem;
             color: #264653;
             margin-bottom: 20px;
-            position: relative;
             font-weight: 600;
             font-family: 'Playfair Display', serif;
-            text-align: center;
+            position: relative;
+            transition: color 0.3s;
+        }
+        section h2:hover {
+            color: #2a9d8f;
         }
         section p {
             margin-bottom: 20px;
@@ -91,26 +107,29 @@
             padding: 20px;
         }
         .tip-card {
-            background-color: #fff;
+            background: rgba(255, 255, 255, 0.85);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
             position: relative;
         }
         .tip-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            background: rgba(42, 157, 143, 0.1);
         }
         .tip-card h3 {
             font-size: 1.6rem;
             color: #2a9d8f;
             margin-bottom: 10px;
+            font-weight: 600;
         }
         .tip-card p {
             font-size: 1rem;
             color: #666;
+            line-height: 1.5;
         }
 
         /* Footer */
@@ -128,33 +147,31 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>The Truth About Fast Fashion</h1>
-    <p>Understanding the Impact and Making Eco-Friendly Choices</p>
+    <p>Discover the environmental, social, and waste impacts of fast fashion and explore eco-friendly alternatives to make more sustainable fashion choices.</p>
 </header>
 
 <section id="planet">
     <h2>Impact on the Planet</h2>
-    <p>Fast fashion has a significant impact on the environment. The constant production of cheap clothing leads to excessive water use, pollution, and greenhouse gas emissions. Synthetic fibers like polyester shed microplastics, which end up in our oceans and ecosystems, causing harm to wildlife and the environment.</p>
+    <p>Fast fashion produces a staggering amount of greenhouse gases, with the fashion industry responsible for 10% of global carbon emissions. The production of synthetic fibers like polyester contributes to plastic pollution as microplastics enter the oceans and food chain, impacting marine life and ecosystems.</p>
+    <p>Water waste is another major issue; creating a single cotton t-shirt requires approximately 2,700 liters of water. The pesticides and dyes used in textile production also pollute rivers and soil, making it essential to consider sustainable alternatives.</p>
 </section>
 
 <section id="people">
     <h2>Impact on People</h2>
-    <p>The demand for fast fashion often results in poor working conditions for the people who produce it. Many workers are underpaid, overworked, and subjected to unsafe environments. Supporting fair trade and ethically sourced clothing can help promote fair wages and better working conditions.</p>
+    <p>Fast fashion companies often outsource labor to countries with low wages and few labor protections. Workers are often paid extremely low wages, work in unsafe conditions, and face long hours without adequate compensation. In 2013, the Rana Plaza factory collapse in Bangladesh highlighted the unsafe conditions many garment workers face.</p>
+    <p>Supporting fair trade and certified ethical brands ensures fair wages and safer work environments for garment workers, promoting social responsibility in the fashion industry.</p>
 </section>
 
 <section id="wastefulness">
     <h2>Wastefulness and Short Lifespan of Garments</h2>
-    <p>Fast fashion encourages a throwaway culture, with clothes quickly going out of style or deteriorating after just a few wears. This leads to massive amounts of textile waste in landfills, where synthetic fabrics can take hundreds of years to decompose.</p>
+    <p>The rapid turnover of fashion trends promotes a throwaway culture, with millions of tons of clothing ending up in landfills each year. Most fast fashion garments are not durable, leading to a short lifespan. Synthetic fabrics take hundreds of years to decompose, exacerbating the waste crisis.</p>
+    <p>Encouraging a shift to a “buy less, choose well” mentality can help reduce textile waste and promote a more sustainable approach to fashion.</p>
 </section>
 
 <section id="guide">
@@ -162,26 +179,25 @@
     <div class="tips">
         <div class="tip-card">
             <h3>1. Shop Second-Hand</h3>
-            <p>Buying second-hand clothes reduces the demand for new clothing production, cutting down on environmental impact. However, be mindful that overbuying second-hand clothing can still contribute to waste. Aim for quality items that you’ll wear repeatedly.</p>
+            <p>Buying second-hand clothing helps reduce demand for new products and minimizes waste. However, avoid over-purchasing; focus on quality pieces that suit your style to truly make an impact.</p>
         </div>
         
         <div class="tip-card">
             <h3>2. Choose Fair Trade and Ethical Brands</h3>
-            <p>Opting for fair trade or ethically certified brands helps support sustainable practices. These brands prioritize workers' rights, environmental protection, and high-quality materials.</p>
+            <p>Fair trade and ethical brands ensure fair wages, safe working conditions, and eco-friendly materials. Look for certifications like GOTS (Global Organic Textile Standard) or Fair Trade Certified.</p>
         </div>
         
         <div class="tip-card">
             <h3>3. Invest in Quality Pieces</h3>
-            <p>Rather than buying many cheap items, invest in high-quality pieces that will last. Look for timeless styles and durable materials to create a wardrobe that can withstand trends and wear.</p>
+            <p>Invest in high-quality, timeless pieces instead of fast fashion items. Durable materials last longer and help reduce the frequency of purchases, ultimately lowering environmental impact.</p>
         </div>
         
         <div class="tip-card">
             <h3>4. Avoid Synthetic Fabrics</h3>
-            <p>Synthetic fabrics like polyester and nylon are made from plastic, shedding microplastics that pollute waterways. Choose natural fabrics like cotton, linen, and wool, but look for organic or sustainably sourced options when possible.</p>
+            <p>Opt for natural, biodegradable fabrics like organic cotton, linen, and wool. These materials are less harmful to the environment and decompose more easily, unlike synthetics that shed microplastics.</p>
         </div>
     </div>
 </section>
-
 
 </body>
 </html>
