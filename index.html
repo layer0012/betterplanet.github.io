@@ -16,84 +16,101 @@
             font-family: 'Montserrat', sans-serif;
             color: #333;
             line-height: 1.6;
-            background-color: #f4f4f9;
+            background: linear-gradient(to right, #f3f3f3, #e3f2fd);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
+
+        /* Header */
         header {
             background: linear-gradient(135deg, #2a9d8f, #264653);
             color: #fff;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
             font-family: 'Playfair Display', serif;
+            position: relative;
+            overflow: hidden;
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 10px;
             animation: fadeIn 1.5s ease-out;
+            position: relative;
+            z-index: 1;
         }
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 300;
+            z-index: 1;
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            top: -20%;
+            left: -50%;
+            animation: pulse 5s infinite;
+            z-index: 0;
         }
 
         /* Section Styles */
         section {
-            padding: 40px 20px;
-            max-width: 800px;
+            padding: 60px 20px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         section h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #264653;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             position: relative;
             font-weight: 600;
             font-family: 'Playfair Display', serif;
-        }
-        section h2::after {
-            content: "";
-            width: 50px;
-            height: 3px;
-            background-color: #2a9d8f;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease-in-out;
-        }
-        section h2:hover::after {
-            width: 100px;
+            text-align: center;
         }
         section p {
             margin-bottom: 20px;
             font-size: 1.1rem;
             color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px;
         }
 
         /* Tips Box */
         .tips {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
         }
-        .tips:hover {
-            transform: scale(1.02);
+        .tip-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
         }
-        .tips h3 {
-            font-size: 1.5rem;
+        .tip-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .tip-card h3 {
+            font-size: 1.6rem;
             color: #2a9d8f;
             margin-bottom: 10px;
         }
-        .tips p {
+        .tip-card p {
             font-size: 1rem;
             color: #666;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            color: #555;
         }
 
         /* Footer */
@@ -103,12 +120,18 @@
             background-color: #264653;
             color: #fff;
             font-size: 0.9rem;
+            position: relative;
         }
 
         /* Animations */
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
@@ -137,18 +160,28 @@
 <section id="guide">
     <h2>How to Make Eco-Friendly Fashion Choices</h2>
     <div class="tips">
-        <h3>1. Shop Second-Hand</h3>
-        <p>Buying second-hand clothes reduces the demand for new clothing production, cutting down on environmental impact. However, be mindful that overbuying second-hand clothing can still contribute to waste. Aim for quality items that you’ll wear repeatedly.</p>
+        <div class="tip-card">
+            <h3>1. Shop Second-Hand</h3>
+            <p>Buying second-hand clothes reduces the demand for new clothing production, cutting down on environmental impact. However, be mindful that overbuying second-hand clothing can still contribute to waste. Aim for quality items that you’ll wear repeatedly.</p>
+        </div>
         
-        <h3>2. Choose Fair Trade and Ethical Brands</h3>
-        <p>Opting for fair trade or ethically certified brands helps support sustainable practices. These brands prioritize workers' rights, environmental protection, and high-quality materials.</p>
+        <div class="tip-card">
+            <h3>2. Choose Fair Trade and Ethical Brands</h3>
+            <p>Opting for fair trade or ethically certified brands helps support sustainable practices. These brands prioritize workers' rights, environmental protection, and high-quality materials.</p>
+        </div>
         
-        <h3>3. Invest in Quality Pieces</h3>
-        <p>Rather than buying many cheap items, invest in high-quality pieces that will last. Look for timeless styles and durable materials to create a wardrobe that can withstand trends and wear.</p>
+        <div class="tip-card">
+            <h3>3. Invest in Quality Pieces</h3>
+            <p>Rather than buying many cheap items, invest in high-quality pieces that will last. Look for timeless styles and durable materials to create a wardrobe that can withstand trends and wear.</p>
+        </div>
         
-        <h3>4. Avoid Synthetic Fabrics</h3>
-        <p>Synthetic fabrics like polyester and nylon are made from plastic, shedding microplastics that pollute waterways. Choose natural fabrics like cotton, linen, and wool, but look for organic or sustainably sourced options when possible.</p>
+        <div class="tip-card">
+            <h3>4. Avoid Synthetic Fabrics</h3>
+            <p>Synthetic fabrics like polyester and nylon are made from plastic, shedding microplastics that pollute waterways. Choose natural fabrics like cotton, linen, and wool, but look for organic or sustainably sourced options when possible.</p>
+        </div>
     </div>
 </section>
+
+
 </body>
 </html>
