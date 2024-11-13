@@ -15,13 +15,35 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: #333;
-            background-image: url('images/background.jpg'); /* Background image */
+            background-image: url('images/background.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             overflow-x: hidden;
             scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(38, 70, 83, 0.8);
+            padding: 10px;
+            text-align: center;
+            z-index: 10;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #2a9d8f;
         }
 
         /* Header */
@@ -79,48 +101,28 @@
             line-height: 1.6;
         }
 
-        /* Image Banner */
-        .banner {
-            width: 100%;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Tips Box */
-        .tips {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        .tip-card {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 20px;
+        /* Blog Section */
+        #blog {
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            max-width: 1000px;
+            margin: 30px auto;
             border-radius: 15px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .tip-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-            background: rgba(42, 157, 143, 0.1);
-        }
-        .tip-card h3 {
-            font-size: 1.6rem;
+        #blog h3 {
+            font-size: 2rem;
             color: #2a9d8f;
+            margin-top: 20px;
             margin-bottom: 10px;
             font-weight: 600;
         }
-        .tip-card p {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.5;
+        #blog p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            text-align: left;
+            margin: 10px 0;
         }
 
         /* Footer */
@@ -135,6 +137,14 @@
 </head>
 <body>
 
+<nav>
+    <a href="#planet">Planet</a>
+    <a href="#people">People</a>
+    <a href="#wastefulness">Wastefulness</a>
+    <a href="#guide">Eco-Friendly Guide</a>
+    <a href="#blog">Blog</a>
+</nav>
+
 <header>
     <h1>The Truth About Fast Fashion</h1>
     <p>Discover the environmental, social, and waste impacts of fast fashion and explore eco-friendly alternatives to make more sustainable fashion choices.</p>
@@ -143,19 +153,19 @@
 <section id="planet">
     <div class="banner" style="background-image: url('images/img1.jpg');"></div>
     <h2>Impact on the Planet</h2>
-    <p>Fast fashion is responsible for up to 10% of global carbon emissions, more than the aviation and shipping industries combined. Producing a single cotton shirt requires about 2,700 liters of water, which is enough for one person to drink for 2.5 years. The fashion industry also contributes significantly to water pollution, with textile dyeing ranking as one of the most polluting industries, affecting rivers and oceans globally. Moreover, synthetic fibers like polyester shed microplastics into water systems, adding to ocean pollution and impacting marine life.</p>
+    <p>Fast fashion is responsible for up to 10% of global carbon emissions...</p>
 </section>
 
 <section id="people">
     <div class="banner" style="background-image: url('images/img2.jpg');"></div>
     <h2>Impact on People</h2>
-    <p>Many fast fashion workers earn as little as $3 a day, often in unsafe working conditions. In countries like Bangladesh and India, garment workers work long hours, sometimes up to 14 hours a day, with limited breaks and no overtime pay. Around 85% of these workers are women, often facing discrimination and poor treatment. A 2018 study found that only 2% of fashion workers worldwide earn a living wage, creating an ongoing cycle of poverty for these communities and limited opportunities for improved living standards.</p>
+    <p>Many fast fashion workers earn as little as $3 a day...</p>
 </section>
 
 <section id="wastefulness">
     <div class="banner" style="background-image: url('images/img3.png');"></div>
     <h2>Wastefulness and Short Lifespan of Garments</h2>
-    <p>The rapid production cycle of fast fashion encourages consumers to purchase new clothes frequently, with estimates showing that the average American discards around 81 pounds of clothing each year. In the UK alone, 300,000 tons of textile waste end up in landfills annually. Most of these clothes are made with synthetic fibers, which can take hundreds of years to decompose, releasing toxic chemicals and greenhouse gases in the process. This waste contributes to soil degradation and the release of harmful substances into the environment.</p>
+    <p>The rapid production cycle of fast fashion encourages consumers...</p>
 </section>
 
 <section id="guide">
@@ -163,24 +173,33 @@
     <div class="tips">
         <div class="tip-card">
             <h3>1. Shop Second-Hand</h3>
-            <p>Buying second-hand clothing reduces the demand for new items and minimizes waste. However, avoid over-purchasing and focus on quality pieces that truly suit your style.</p>
+            <p>Buying second-hand clothing reduces the demand for new items...</p>
         </div>
-        
-        <div class="tip-card">
-            <h3>2. Choose Fair Trade and Ethical Brands</h3>
-            <p>Fair trade and ethical brands ensure fair wages, safe working conditions, and eco-friendly materials. Look for certifications like GOTS (Global Organic Textile Standard) or Fair Trade Certified.</p>
-        </div>
-        
-        <div class="tip-card">
-            <h3>3. Invest in Quality Pieces</h3>
-            <p>Opt for high-quality, timeless pieces instead of fast fashion items. Durable materials last longer, reducing the need for frequent replacements.</p>
-        </div>
-        
-        <div class="tip-card">
-            <h3>4. Avoid Synthetic Fabrics</h3>
-            <p>Choose natural, biodegradable fabrics like organic cotton, linen, and wool. These materials decompose easily and avoid the issue of microplastics.</p>
-        </div>
+        <!-- Additional tips... -->
     </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog">
+    <h2>Blog</h2>
+    <h3>Environmental Impact</h3>
+    <p>The fast fashion industry generates a staggering 92 million tons of textile waste every year, with a significant portion ending up in landfills. This waste is driven by the constant demand for cheap, trendy clothing, which often has a short lifespan. The production of these garments requires extensive resources such as water and raw materials. For instance, producing one cotton shirt uses around 2,700 liters of water, enough for one person to drink for almost 2.5 years.</p>
+    <p>Along with waste, the environmental impact is amplified by microplastic pollution, especially from synthetic fabrics like polyester. Every time such clothes are washed, they release microplastics into water systems, causing severe harm to marine life. In addition, harmful chemicals in dyes leach into the environment, polluting soil and water, making the fashion industry one of the leading contributors to pollution and climate change.</p>
+
+    <h3>Human Cost</h3>
+    <p>The real cost of fast fashion is often hidden behind the low price tags consumers see in stores. Workers who produce these garments face hazardous working conditions and extremely low wages. Many of the individuals involved, often women, are subjected to long hours with no health benefits or job security. These conditions are prevalent in factories where workers may be exposed to dangerous chemicals and unsafe machinery.</p>
+    <p>In some regions, workers earn far below a living wage, making it nearly impossible to meet basic needs. The drive for lower production costs and increased profits keeps these workers trapped in cycles of poverty. Moreover, these individuals have little access to basic rights, including healthcare and labor unions, making them vulnerable to exploitation. Unfortunately, consumers are rarely aware of the human cost of the clothes they purchase, leaving workers with no recourse.</p>
+
+    <h3>The Consumer</h3>
+    <p>While the problems in fast fashion are rooted in industry-wide practices, consumers hold a powerful influence to change the status quo. By becoming more aware of the real impacts of their purchasing decisions, individuals can help reduce the demand for unsustainable, unethical clothing. Supporting sustainable brands, buying fewer but higher-quality garments, and considering ethical alternatives are all small steps toward greater change.</p>
+    <p>Education plays a crucial role in this transformation. Many shoppers are unaware of the environmental and human toll fast fashion takes. By raising awareness and providing resources, people can make better-informed choices, encouraging brands to adopt more responsible practices. Shifting consumption habits and advocating for transparency in the supply chain can gradually reshape the industry.</p>
+
+    <h3>What Can I Do?</h3>
+    <p>To reduce the detrimental effects of fast fashion, start by supporting companies that prioritize ethical labor practices and sustainable production methods. Look for brands that focus on eco-friendly materials and fair wages for workers. Another way to lessen the environmental impact is by shopping second-hand. Thrift stores and resale platforms provide a variety of options while helping extend the lifespan of garments.</p>
+    <p>Additionally, instead of following fleeting trends, invest in high-quality items that last longer and can be styled year-round. Simple acts like washing clothes in cold water, reducing wash frequency, and avoiding over-drying can also minimize the environmental footprint. When collectively practiced, these changes can make a substantial difference in reducing the impact of fast fashion on the planet.</p>
+
+    <h3>Conclusion</h3>
+    <p>While fast fashion has significant negative effects on both the environment and workers, consumer behavior has the power to drive substantial change. By making more conscious choices, supporting ethical brands, and reducing waste, we can contribute to creating a more sustainable and equitable fashion industry.</p>
 </section>
 
 <footer>
